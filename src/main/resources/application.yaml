@@ -1,0 +1,28 @@
+spring:
+  h2.console.enabled: true
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate.ddl-auto: update
+  datasource.platform: postgres
+  database.driverClassName: org.postgresql.Driver
+camunda.bpm:
+  default-serialization-format: application/json
+  history-level: FULL
+  admin-user:
+    id: demo
+    password: demo
+    firstName: Demo
+    lastName: Demo
+server.port: 8080
+datasource:
+  primary:
+    jdbc-url: jdbc:postgresql://localhost:5432/datasource-core
+    username: postgres
+    password: sa
+    configuration.maximum-pool-size: 30
+  secondary:
+    jdbc-url: jdbc:postgresql://localhost:5432/datasource-bpm
+    username: postgres
+    password: sa
+    configuration.maximum-pool-size: 30
